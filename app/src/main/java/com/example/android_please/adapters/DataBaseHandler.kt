@@ -111,6 +111,11 @@ class DataBaseHandler(var context: Context): SQLiteOpenHelper(context, DATABASE_
         var query = "DELETE FROM ${TABLE_NAME} WHERE ${COL_DATE} LIKE '%${date}%';"
         var c = db.rawQuery(query, null)
         while(c.moveToNext());
+
+        var query2 = "DELETE FROM ${TABLE2_NAME} WHERE ${COL_DATE} LIKE '%${date}%';"
+        var c2 = db.rawQuery(query2, null)
+        while(c2.moveToNext());
+
         return
     }
 
